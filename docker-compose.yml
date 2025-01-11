@@ -56,7 +56,8 @@ services:
       - saleor-backend-tier
     volumes:
       - saleor-redis:/data
-       worker:
+  
+  worker:
     image: ghcr.io/saleor/saleor:3.20
     command: celery -A saleor --app=saleor.celeryconf:app worker --loglevel=info -B
     restart: unless-stopped
